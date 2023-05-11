@@ -1,0 +1,29 @@
+aws s3api create-bucket --bucket mynewweb3366 --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2
+
+673795474418
+
+
+aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --user-name awsS3user
+
+aws s3 website s3://mynewweb3366/ --index-document index.html
+
+aws s3 cp /home/ec2-user/sysops-activity-files/static-website/ s3://mynewweb3366/ --recursive --acl public-read
+
+aws s3 ls mynewweb3366
+
+aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3OutpostsFullAccess --user-name awsS3user
+
+
+aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3OutpostsFullAccess --user-name awsS3user
+
+aws s3 cp /home/ec2-user/sysops-activity-files/static-website/ s3://mynewweb3366/css --acl public-read
+
+
+aws s3 sync s3://my-us-west-2-mynewweb3366 s3://my-us-east-1-mynewweb3366 --source-region us-west-2 --region us-east-1
+
+aws s3 sync /home/ec2-user/sysops-activity-files/static-website/ <s3://mynewweb3366/ --acl public-read
+mynewweb3366
+aws s3 sync s3://mynewweb3366/ . --exclude "*another/*"
+
+
+
